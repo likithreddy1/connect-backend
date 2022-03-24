@@ -14,10 +14,20 @@ const path = require("path");
 const MessagesRouter = require('./routes/Messages');
 const { header } = require('express/lib/request');
 dotenv.config();
+const dotenv = require('dotenv').config();   
 //connection
-mongoose.connect(process.env.MongodbURL, () => {
-    console.log('connected to mongo')
-})
+mongoose
+  .connect(process.env.MongodbURL, {
+    usenewurlparser: true,
+    useunifiedtopology: true,
+  })
+  .then(() => {
+    console.log("Successfully connected ");
+  })
+  .catch((error) => {
+    console.log(`can not connect to database, ${error}`);
+  });
+
 
 
 //middleware
