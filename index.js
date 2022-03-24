@@ -14,7 +14,7 @@ const path = require("path");
 const MessagesRouter = require('./routes/Messages');
 const { header } = require('express/lib/request');
 dotenv.config();
-const dotenv = require('dotenv').config();   
+ 
 //connection
 mongoose
   .connect(process.env.MongodbURL, {
@@ -70,6 +70,6 @@ app.use('/messages',MessagesRouter)
 app.get('/',(req,res)=>{
     res.send("Hello there!!!")
 })
-app.listen(5000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("port is running")
 }) 
