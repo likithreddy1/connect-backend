@@ -33,7 +33,7 @@ mongoose
 //middleware
 app.use(express.json())
 app.use(cors({
-  origin:'http://localhost:3000',
+  origin:'https://connect-web-app.herokuapp.com/',
   // Policy:cross-origin,
   credentials:true,
   allowedHeaders:true
