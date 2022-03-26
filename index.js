@@ -34,6 +34,7 @@ mongoose
 app.use(express.json())
 app.use(cors({
   origin:'*',
+ methods:['get','post','put','delete']
   // Policy:cross-origin,
   credentials:true,
   allowedHeaders:true
